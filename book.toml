@@ -1,0 +1,12 @@
+[book]
+authors = ["drklee3"]
+language = "en"
+multilingual = false
+src = "src"
+title = "sushii bot"
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+no-section-label= true
+git-repository-url = "https://github.com/sushiibot/docs"
