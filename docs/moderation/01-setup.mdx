@@ -1,0 +1,116 @@
+---
+sidebar_position: 1
+---
+
+import {
+    DiscordMessages,
+    DiscordMessage,
+    DiscordMention,
+    DiscordAttachment,
+    DiscordEmbed,
+    DiscordEmbedField,
+    DiscordEmbedFields,
+    DiscordInvite,
+    DiscordSystemMessage,
+    DiscordReaction,
+    DiscordReactions,
+    DiscordAttachments,
+    DiscordReply,
+    DiscordCommand,
+} from "@skyra/discord-components-react";
+
+# Setup
+
+Example set up commands are shown below. A full command reference can be found in the commands list.
+
+## Set log channels
+
+<DiscordMessages>
+    <DiscordMessage author="User">
+        -settings modlog set{" "}
+        <DiscordMention type="channel">mod-log</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated mod log to:{" "}
+        <DiscordMention type="channel">mod-log</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage author="User">
+        -settings msglog set{" "}
+        <DiscordMention type="channel">message-log</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated message log to:{" "}
+        <DiscordMention type="channel">message-log</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage author="User">
+        -settings memberlog set{" "}
+        <DiscordMention type="channel">member-log</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated member log to:{" "}
+        <DiscordMention type="channel">member-log</DiscordMention>
+    </DiscordMessage>
+</DiscordMessages>
+
+## Set mute role
+
+Set your mute role to let sushii keep track of when members are muted and
+automatically mute/unmute. Note that you need to set the corresponding mute role
+permissions yourself for the time being (eg manually setting permissions to
+disable message sending permissions).
+
+<DiscordMessages>
+    <DiscordMessage author="User">-settings mute role Mute</DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated mute role to ID 747155433655107594
+    </DiscordMessage>
+    <DiscordMessage author="User">
+        -settings mute defaultduration 1d
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Set the default mute duration to 1day
+    </DiscordMessage>
+</DiscordMessages>
+
+## Set join messages
+
+<DiscordMessages>
+    <DiscordMessage author="User">
+        -settings msgchannel set{" "}
+        <DiscordMention type="channel">general</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated message channel to:{" "}
+        <DiscordMention type="channel">general</DiscordMention>
+    </DiscordMessage>
+    <DiscordMessage author="User">
+        -settings joinmsg set Welcome &lt;mention&gt; to &lt;server&gt; (member
+        #&lt;member_number&gt;)!
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated join message to: Welcome &lt;mention&gt; to &lt;server&gt;
+        (member #&lt;member_number&gt;)!
+    </DiscordMessage>
+    <DiscordMessage author="User">-settings joinreact set 👋</DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Updated join react to: 👋
+    </DiscordMessage>
+</DiscordMessages>
+
+<br />
+
+When a new member joins, sushii will send the following message.
+
+<DiscordMessages>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        Welcome <DiscordMention>User</DiscordMention> to My Server! (member
+        #129)!
+        <DiscordReactions slot="reactions">
+            <DiscordReaction
+                name="👋"
+                emoji="/img/emoji/wave.svg"
+                count={1}
+            ></DiscordReaction>
+        </DiscordReactions>
+    </DiscordMessage>
+</DiscordMessages>
