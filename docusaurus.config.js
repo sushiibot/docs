@@ -14,7 +14,8 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'sushiibot', // Usually your GitHub org/user name.
-  projectName: 'sushii-2', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
@@ -23,6 +24,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          sidebarCollapsed: false,
           // Please change this to your repo.
           editUrl: 'https://github.com/sushiibot/docs/edit/main/',
           routeBasePath: '/'
@@ -64,15 +66,6 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
           {
             title: 'Community',
             items: [

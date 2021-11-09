@@ -1,0 +1,187 @@
+---
+sidebar_position: 2
+---
+
+import {
+    DiscordMessages,
+    DiscordMessage,
+    DiscordMention,
+    DiscordAttachment,
+    DiscordEmbed,
+    DiscordEmbedField,
+    DiscordEmbedFields,
+    DiscordInvite,
+    DiscordSystemMessage,
+    DiscordReaction,
+    DiscordReactions,
+    DiscordAttachments,
+    DiscordReply,
+    DiscordCommand,
+} from "@skyra/discord-components-react";
+
+# Usage
+
+## Basic commands
+
+To get started, the basic commands are as you might expect. You can ban, warn,
+and mute one or multiple members. Just pass more mentions or IDs and make sure
+your (optional) reason is after them! IDs and mentions can both be
+interchangably used.
+
+<DiscordMessages>
+    <DiscordMessage author="moderator">
+        -ban <DiscordMention>user</DiscordMention> trolling
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        <DiscordEmbed slot="embeds" embed-title="Attempted to ban 1 users">
+            🔨 user#0000 (890123456789010) banned.
+            <DiscordEmbedFields slot="fields">
+                <DiscordEmbedField fieldTitle="Reason">
+                    trolling
+                </DiscordEmbedField>
+            </DiscordEmbedFields>
+        </DiscordEmbed>
+    </DiscordMessage>
+    <DiscordMessage author="moderator">
+        -ban 890123456789010 890123456789011 890123456789012 890123456789013
+        raid
+    </DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        <DiscordEmbed slot="embeds" embed-title="Attempted to ban 4 users">
+            🔨 user#0000 (890123456789010) banned.
+            <br />
+            🔨 user#0001 (890123456789011) banned.
+            <br />
+            🔨 user#0002 (890123456789012) banned.
+            <br />
+            🔨 user#0003 (890123456789013) banned.
+            <br />
+            <DiscordEmbedFields slot="fields">
+                <DiscordEmbedField fieldTitle="Reason">raid</DiscordEmbedField>
+            </DiscordEmbedFields>
+        </DiscordEmbed>
+    </DiscordMessage>
+</DiscordMessages>
+
+<br />
+
+Ban, mute, warn, and note commands all work the same. The only difference is for
+mutes you can also add a duration in the reason to make the mute timed. This
+will tell sushii to automatically unmute them after the given duration.
+
+:::note
+
+Mute and warn commands will by default DM the user the reason (and duration for
+mutes). You can disable this for mutes in settings if you do not want sushii to
+DM the targeted user. If you have some information related to a user you only
+want other moderators to see and to have it show up in their `history`, you can
+use the `note` command.
+
+:::
+
+:::caution
+
+The `ban` command does **not** delete any messages. In order to ban and delete
+messages, use the native Discord ban menu then set the reason afterwards. This
+also allows for flexibility and speed when there is the urgent need to remove
+a user and their messages.
+
+:::
+
+If you ban, mute, or warn a user without an initial reason, or if you use
+Discord's native ban menu, you can set the ban reason. You can either use the
+case number which you can find in the moderation log, or use `latest`. To set
+multiple latest case reasons, include the number of cases as shown below.
+
+<DiscordMessages>
+    <DiscordMessage author="moderator">-reason latest trolling</DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        <DiscordEmbed slot="embeds" embed-title="Finished updating 1 case">
+            <DiscordEmbedFields slot="fields">
+                <DiscordEmbedField fieldTitle="Reason">
+                    trolling
+                </DiscordEmbedField>
+            </DiscordEmbedFields>
+        </DiscordEmbed>
+    </DiscordMessage>
+    <DiscordMessage author="moderator">-reason latest~4 raid</DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        <DiscordEmbed slot="embeds" embed-title="Finished updating 4 cases">
+            <DiscordEmbedFields slot="fields">
+                <DiscordEmbedField fieldTitle="Reason">raid</DiscordEmbedField>
+            </DiscordEmbedFields>
+        </DiscordEmbed>
+    </DiscordMessage>
+</DiscordMessages>
+
+## User History
+
+Wondering if a member is a repeating troublemaker? Use the `history` command to
+see all past moderator actions on them.
+
+<DiscordMessages>
+    <DiscordMessage author="moderator">-history 890123456789010</DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        <DiscordEmbed slot="embeds" embed-title="Attempted to ban 4 users">
+            🔨 user#0000 (890123456789010) banned.
+            <br />
+            🔨 user#0001 (890123456789011) banned.
+            <br />
+            🔨 user#0002 (890123456789012) banned.
+            <br />
+            🔨 user#0003 (890123456789013) banned.
+            <br />
+            <DiscordEmbedFields slot="fields">
+                <DiscordEmbedField fieldTitle="Reason">raid</DiscordEmbedField>
+            </DiscordEmbedFields>
+        </DiscordEmbed>
+    </DiscordMessage>
+</DiscordMessages>
+
+## Lookup
+
+Have a new member that is suspicious? Look up their ban history across all
+servers sushii is in.
+
+:::info
+
+The `lookup` command is **opt-in** only. Sushii will not share any of your
+server details unless you opt-in to sharing, which will also allow you to see
+other servers that have opted in. You can still use the `lookup` command without
+opting into detail sharing, but information will be limited.
+
+:::
+
+Some servers may have icons to differentiate between their statuses. Servers are
+always ordered by highest server members to lowest to determine how much
+consideration you should put into certain ban reasons. Servers with low member
+counts are hidden to prevent abuse.
+
+| Icon                                                                           | Description            |
+| ------------------------------------------------------------------------------ | ---------------------- |
+| 🧭                                                                             | Server is on Discovery |
+| <img src="https://cdn.discordapp.com/emojis/856045536687947796.png?size=24" /> | Server is partnered    |
+| <img src="https://cdn.discordapp.com/emojis/856045537236353024.png?size=24" /> | Server is verified     |
+
+<DiscordMessages>
+    <DiscordMessage author="moderator">-lookup 890123456789010</DiscordMessage>
+    <DiscordMessage bot author="sushii" avatar="/img/sushii_avatar.png">
+        <DiscordEmbed
+            slot="embeds"
+            author-name="user#1234"
+            embed-title="3 bans found"
+        >
+            <img src="https://cdn.discordapp.com/emojis/856045536687947796.png?size=24" />
+            🧭 Cats (123482987234) (5 months ago): trolling
+            <br />
+            Server (19824723948234) (5 months ago): raiding
+            <br />
+            another server (80865141238764) (5 months ago)
+            <DiscordEmbedFields slot="fields">
+                <DiscordEmbedField fieldTitle="User Info">
+                    Account created at August 23, 2020 7:44 PM (a year ago)
+                </DiscordEmbedField>
+            </DiscordEmbedFields>
+        </DiscordEmbed>
+    </DiscordMessage>
+</DiscordMessages>
