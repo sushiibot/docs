@@ -1,3 +1,9 @@
+---
+id: getting-started
+slug: /
+sidebar_position: 0
+---
+
 # Getting Started
 
 ## Add sushii
