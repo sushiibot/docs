@@ -25,5 +25,5 @@ This is only saved when a server moderator enables certain options.
 * Bans
 
 
-To request your data to be removed, please join the support server or email
-[contact@sushii.xyz](mailto:contact@sushii.xyz)
+To request your data to be removed, please join the
+[support server](https://discord.gg/PjDRRXSSAF) or email [contact@sushii.xyz](mailto:contact@sushii.xyz)
