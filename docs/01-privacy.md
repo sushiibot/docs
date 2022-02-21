@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Privacy
 
 By adding sushii or joining a server with sushii, the following data is stored.
