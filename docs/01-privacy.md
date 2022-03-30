@@ -71,7 +71,7 @@ share with sushii.
 By adding sushii or joining a server with sushii, the following information we
 collect may include the following:
 
-### Automatically Collected Data
+### Automatically collected data
 
 * User ID
 * Username
@@ -80,7 +80,7 @@ collect may include the following:
 * Date and Time of last message
 * Number of messages in the past month, week, day, and in total
 
-### Collected Data Only When Enabled
+### Collected data only when enabled
 
 These are only saved when a server moderator enables certain options.
 
@@ -183,7 +183,7 @@ required or permitted by law (such as tax, accounting or other legal
 requirements).
 
 For messages saved for logging purposes, messages are saved for a max of 7 days
-before they are removed from our databaseH.
+before they are removed from our database.
 
 When we have no ongoing legitimate business need to process your personal
 information, we will either delete or anonymize it, or, if this is not possible
@@ -205,7 +205,7 @@ implemented to keep your data safe:
 
 * **User Identification and Discord End User Data Processing:** Wherever
   possible, the only identification key related to you that is stored on our
-  system is your “Discord ID”. Your “Discord ID” is a number provided by the
+  system is your "Discord ID". Your "Discord ID" is a number provided by the
   Discord API and linked to your Discord End User Data. Your username, message
   content, data you provide to Discord, etc. is accessed by requesting such data
   through the Discord API using your Discord ID, while a minimal amount of data
@@ -240,7 +240,7 @@ If you are a resident in Switzerland, the contact details for the data
 protection authorities are available here:
 https://www.edoeb.admin.ch/edoeb/en/home.html.
 
-## Children's Privacy
+## Children's privacy
 
 Our Service does not address anyone under the age of 13. We do not knowingly
 collect personally identifiable information from anyone under the age of 13. If
@@ -262,11 +262,11 @@ we may notify you either by prominently posting a notice of such changes or by
 directly sending you a notification. We encourage you to review this privacy
 policy frequently to be informed of how we are protecting your information.
 
-## Data Removal
+## Data removal
 
 To request your data to be removed, please contact us in the following section.
 
-## Contact Us
+## Contact us
 
 If you have any questions about this Privacy Policy, You can contact us:
 
